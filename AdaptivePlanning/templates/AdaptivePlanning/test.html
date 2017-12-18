@@ -1,0 +1,261 @@
+{% extends "AdaptivePlanning/home.html" %}
+
+{% block content %}
+	 <center>
+	<h1 style="color:White;"><b> Adaptive Planning </b></h1>
+        
+	<div style="color:White;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" align="center"
+			style="color:White;width: 100%; border-collapse: collapse;border-style: solid;border-color:black;">
+
+			<thead>
+				<tr>
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+				
+					<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+</center>
+</thead>
+	</tbody>
+	<tbody>
+
+				{%for r in db %}
+                               
+   <tr>                                                    
+ <td style=>{{r.Release}}</td>
+<td style=>{{r.DD}}</td>
+ <td style=>{{r.DefectLeakage}}</td>
+<td style=>{{r.DefectRejection}}</td>
+ <td style=>{{r.TestCaseCount}}</td>
+<td style=>{{r.ApplicationComplexity}}</td>
+ <td style=>{{r.DomainKnowledge}}</td>
+<td style=>{{r.TechnicalSkills}}</td>
+ <td style=>{{r.ReqQueryCount}}</td>
+<td style=>{{r.CodeReviewComments}}</td>
+ <td style=>{{r.DesignReviewComments}}</td>
+<td style=>{{r.NoofResources}}</td>
+ <td style=>{{r.BudgetinUse}}</td>
+<td style=>{{r.ETA}}</td>
+ <td style=>{{r.Efficiency}}</td>
+<td style=>{{r.ProjectStatus}}</td>
+<td style=>{{r.AvailabilityofBudget}}</td>
+
+{%endfor%}
+</tr>
+    				
+			
+
+</tbody>
+
+</table>
+</div>
+
+
+
+
+
+<br>
+<br>
+
+<div style="color:White;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" id="recentData" align="center"
+			style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+			<thead>
+				<tr>
+					
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+									<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+
+<tbody>
+
+			
+
+
+<form action="/juniper/AdaptivePlanning/result/" method="post"> 
+{% csrf_token%}                              
+ <tr> 
+{%for r in db%} 
+<td><input type="radio"id="r{{forloop.counter}}" name="Release" value="">{{r.Release}}</td>                                                  
+<label for="r{{forloop.counter}}">
+
+
+{%if r.is_clicked%}
+
+<img src="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"  />
+{%endif%}
+
+</label>
+
+
+
+
+
+
+
+
+
+
+<!-- <td style=>{{r.Release}}</td>-->
+<td style=>{{r.DD}}</td>
+ <td style=>{{r.DefectLeakage}}</td>
+<td style=>{{r.DefectRejection}}</td>
+ <td style=>{{r.TestCaseCount}}</td>
+<td style=>{{r.ApplicationComplexity}}</td>
+ <td style=>{{r.DomainKnowledge}}</td>
+<td style=>{{r.TechnicalSkills}}</td>
+ <td style=>{{r.ReqQueryCount}}</td>
+<td style=>{{r.CodeReviewComments}}</td>
+ <td style=>{{r.DesignReviewComments}}</td>
+<td style=>{{r.NoofResources}}</td>
+ <td style=>{{r.BudgetinUse}}</td>
+<td style=>{{r.ETA}}</td>
+ <td style=>{{r.Efficiency}}</td>
+<td style=>{{r.ProjectStatus}}</td>
+<td style=>{{r.AvailabilityofBudget}}</td>
+
+</tr>
+
+{%endfor%}
+    				
+
+</form>				
+
+</tbody>
+
+		
+</thead>
+	</tbody>
+		</table>
+	</div>
+
+	</div>
+	
+	
+
+	
+
+	</div>
+</div>
+</div>
+</table>
+
+
+
+</div>
+<br>
+
+<br>
+<form>
+
+<center>
+<form action="/juniper/AdaptivePlanning/result/predict/" method="post"> 
+{% for re in Re %}			
+   <tr>
+   <td style="width: 50px;"></td>
+					<td><input type="number" min="0" step="5"
+						style="width: 45px; text-align: center" name="releaseId"
+						id="releaseId"  value="132"/>  &nbsp &nbsp    </td>
+
+					<!--<td><input type="number" style="width: 45px; text-align: center" name="defectDensity"
+						id="defectDensity" value="123" />&nbsp &nbsp </td>
+					<td><input type="number" 
+						style="width: 45px; text-align: center" name="defectLeakage"
+						id="defectLeakage" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="defectRejection"
+						id="defectRejection" /> &nbsp &nbsp </td>
+					<td><input type="hidden" min="0" step="1"
+						style="width: 45px; text-align: center" /></td>
+					<td width="30px"> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="testCaseCount"
+						id="testCaseCount" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="applicationComplexity" id="applicationComplexity" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="domainKnowledge"
+						id="domainKnowledge" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="technicalSkills"
+						id="technicalSkills" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="requirementQueryCount" id="requirementQueryCount" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="codeReviewComments"
+						id="codeReviewComments" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="designReviewComments" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="numberOfResources"
+						id="numberOfResources" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="budgetInUse" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="numberOfDaysToComplete" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="costOfResource" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="efficiency" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="projectStatus" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="availabilityOfBudget" /> &nbsp &nbsp </td>-->
+				</tr>
+{%endfor%}
+  <br>  <br>
+  <br>
+  <br>
+
+</form>
+
+<form action="/juniper/AdaptivePlanning/result/predict/" method="post"> 
+{% csrf_token%}  
+    <button type="submit">Predict</button>
+</form>
+	
+
+
+
+{% endblock %}

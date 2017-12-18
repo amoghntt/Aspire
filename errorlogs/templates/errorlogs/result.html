@@ -1,0 +1,26 @@
+{% extends "juniper/result1.html" %}
+
+{% block content %}
+<h3 class="perlHeading"><strong style="color:white;text-align:center;">Error Logs</strong></h3>
+		
+		<center><div style="height:400px;overflow:auto;width:500px;">
+		<table style="color:black;width:500px;background-color:white;float:none;padding:0px">
+		<tr style="color:orange;font-size:16pt"><th>Error Log ID</th><th>Cosine Distance</th></tr>
+			{% for error_id,distance in data %}
+				{% if error_id < 4 %}
+					<tr><td><strong style="color:black;font-size:15pt">Product Defect corelation to ID: {{ error_id }} </strong></td>
+				{% endif %}	
+				{% if error_id == 4 or error_id == 5 or error_id == 6 or error_id == 7 %}
+					<tr><td><strong style="color:black;font-size:15pt">Script Error corelation to ID: {{ error_id }} </strong></td>
+				{% endif %}	
+				{% if error_id > 7 %}
+					<tr><td><strong style="color:black;font-size:15pt">Environment Issue corelation to ID: {{ error_id }} </strong></td>
+				{% endif %}	
+					<td><strong style="color:black;font-size:15pt">{{distance}}</strong></td></tr>
+				
+			{% endfor %}
+		</table>
+      	</div>
+</center>
+
+{% endblock %} 

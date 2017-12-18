@@ -1,0 +1,124 @@
+{% extends "testcoverage/home.html" %}
+
+{% block content %}
+	
+ <center>
+	<h1 style="color:white;">
+<b> Test Coverage </b></h1>
+
+	
+<div style="color:White;width: 100%; height: 300px;overflow-y: scroll;"
+		align="center">
+	
+<table class="example" align="center"
+style="color:White;width: 50%; border-collapse: collapse;border-style: solid;border-color:black;">
+
+	
+		<thead>
+				
+<tr style="color:white;background-color:black;font-weight: bold;">
+
+				
+	<th class="paddingCell">Test Case ID</th>
+				
+	<th class="paddingCell">Status</th>
+				
+	<th class="paddingCell">Percentage</th>
+
+		
+		</tr>
+		
+	</thead>
+
+<tbody>
+                              
+				
+	
+
+<thead> 
+    
+                         {%for k,v in test_result%}
+
+
+
+<tr style="color:white;background-color:black;font-weight: bold;">         
+         <td style=>{{k}}</td> 
+{% if v < 20 %} 
+         <td style=>X</td>
+
+{% elif v > 50 %}
+        <td style=>O</td>
+
+{% elif v > 20 and V < 50 %} 
+         <td style=>Intermediate</td>
+{% endif %}
+       
+  <td style=>{{v}}</td>      
+        {%endfor%}
+
+      
+ </tr>
+     
+      
+      
+</tr>
+ 
+</table>
+<br>
+</div>
+
+
+<thead>
+<br>
+<br>
+<br>
+<div 	align="center">
+	
+<table>
+<tr style="color:white;background-color:black;font-weight: bold;">
+
+				
+	<th class="refCell">Relevent Test cases: O </th>
+	
+<tr>
+ 
+<tr style="color:white;background-color:black;font-weight: bold;">
+
+				
+	<th class="refCell">Irrelevent Test cases: X </th>
+	
+<tr>
+ 
+<tr style="color:white;background-color:black;font-weight: bold;">
+
+				
+	<th class="refCell">Intermediate Test cases: Intermediate </th>
+	
+<tr>
+ 			
+</tr>
+	
+	 
+ 
+                    
+   
+
+</thead>
+	
+	</table>
+		</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

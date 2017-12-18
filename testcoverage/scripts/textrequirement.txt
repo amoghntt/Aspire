@@ -1,0 +1,9 @@
+CH shall be reported as PM 1.4 "Allowed Exception" if:
+- CH Outage Duration > 10 calendar days considering timestamp
+- AND CH has CH incident (i.e. CH ID or REP ID in Incident Record is not null) 
+- AND IncidentRecord.Status <> Cancelled
+- AND Incident Reported Date is within 10 days after the Outage start
+- AND Incident must be assigned to DCC / SU 
+- AND Incident has been assigned to SU within 10 days from Outage Start AND either of the following:
+        a) IncidentRecord.Pending 80 Days Flag is set  OR
+        b) IncidentRecord.Status = Closed AND 

@@ -1,0 +1,46 @@
+{% extends "juniper/help.html" %}
+{% load staticfiles %}
+{% block content %}
+
+	<center>
+	<span id="usecase1a">
+		<h2 style="color:black;font-weight:bold">Introduction to Juniper</h2>	 
+		<p>Juniper Aspire is Machine Learning solution for intelligent testing. We have built Juniper Aspire on our existing IP product called Cresta. 
+			This solution has been built using DJango, which is a popular open source python add on. To build this application we have used Machine Learning algorithms like Gensim Word to Vector, Multinomial NB, Linear NB and some post processing using LSI. 
+			Juniper Aspire is currently in development stage and we may change and enhance its capabilities at a later stage.</p>
+		<img src="{%  static 'juniper/images/image1.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	<span id="usecase1a">
+		<h2 style="color:black;font-weight:bold">Introduction to Use case 1A</h2>	 
+		<p>In use case 1A we map perl test scripts to functional objects like email, ReadData and ports. This use case maps test perl scripts with functional objects. A model is created internally using standard perl scripts as the training data. This model is then used to map other perl test scripts with functional objects. </p>
+		<p>An output screen shot for Use case 1A is given below.</p>
+		<img src="{%  static 'juniper/images/image2.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	<span id="usecase1b">
+		<h2 style="color:black;font-weight:bold">Introduction to Use case 1B</h2>	 
+		<p>Use case 1B maps perl source code to functional objects. It uses object mapping model from Mapping Use case 1A and maps source code with Perl test scripts. Thus we can run specific test scripts based on files changed in the source code. In this use case java source files get connected to base functional objects like email. Then we map source code files to these intermediate functional objects. Thus a right to left flow is created, whereby Java and C code files are connected to test scripts that need to be run. This way we can select the perl files that need to be run when some of the code files are changed.</p>
+		<p>An output screen shot for Use case 1B is given below.</p>
+		<img src="{%  static 'juniper/images/image3.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	<span id="usecase2">
+		<h2 style="color:black;font-weight:bold">Introduction to Use case 2</h2>	 
+		<p>In use case 2 we find duplicate and redundant perl scripts. We choose the file that contains all the test perl scripts. We upload the perl test file to server and then we hit test. The output has three colors. Red represent duplicate test cases .The green represent unique test cases and orange color represents “almost” duplicate test cases</p>
+		<p>An output screen shot for Use case 2 is given below:</p>
+		<img src="{%  static 'juniper/images/image4.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	<span id="usecase3">
+		<h2 style="color:black;font-weight:bold">Introduction to Use case 3</h2>	 
+		<p>In the third use case we try to trace the cause of errors. The source of errors can be environment issues, script failures and product defect themselves.We have already created an error log model into our code using some predefined training data. We enter a test error log into the dialogue box and hit test. We are trying to find the co-relation between this error log and its cause using the model.</p>
+		<p>As you can see this error log is largely co-related to product defect with ID 3.  It is hardly co-related with product defect with ID 1 and it has almost no relationship to script errors. Thus we can establish the relation of the error log to its cause.</p>
+		<p>An output screen shot for Use case 3 is given below.</p>
+		<img src="{%  static 'juniper/images/image5.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	<span id="usecase4">
+		<h2 style="color:black;font-weight:bold">Introduction to Use case 4</h2>	 
+		<p>In this use case we use prediction to predict defects and other defect metrics. We can then see the future trends in a graphical form.</p>
+		<p>An output screen shot for Use case 3 is given below.</p>
+		<img src="{%  static 'juniper/images/image6.png' %}" style="width:650px;height:400px;"> 
+	</span>
+	</center>
+	
+{% endblock %}

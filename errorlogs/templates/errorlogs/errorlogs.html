@@ -1,0 +1,21 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+	 <h3 style="color:white;"><strong>Error Logs</strong></h3>
+	<h3 style="color:white;font-weight:bold;font-size:20px">Tracing Error Logs</h3></center><br>
+	<div style="padding-left:100px">
+	<p><strong style="color:white;font-size:15pt;">Error logs at Juniper are big and complex.</strong></p>
+	<p><strong style="color:white;font-size:15pt;">This use case will find out if the test script failure occured due to:</strong></p>
+	<p><strong style="color:white;font-size:15pt;">(1) Environment issues   (2) Scripts issues  (3) Product Defect.</strong></p></div>
+	<center><div style="color:white;font-size:20px;">
+	<strong style="color:white;font-size:15pt;">Error Log: </strong><input type="text" value="{{ log_data }}" style="color:black;font-size:20px;width:75%" /><br><br>
+	<form action="result/">
+    <input type="submit" class="btn btn-theme" value="TEST" /> 
+	<br>
+	<br>
+</form>
+	</div>	
+	
+	</center>
+{% endblock %}

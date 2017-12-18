@@ -1,0 +1,95 @@
+{% extends "juniper/help.html" %}
+{% load staticfiles %}
+{% block content %}
+
+	 <center>
+	 <h2 style="color:black;font-weight:bold">ASPIRE USER MANUAL</h2>	 
+	 </center>
+	 
+	 <span id="introduction">
+		<h4 style="color:black;font-weight:bold">INTRODUCTION</h4>	 
+		<p>CRESTA, an abbreviation for Comprehensive Robotic Engine for Software Test Acceleration is a web based application that works on the principle of machine learning and aims at resolving various aspects of 
+		Software testing processes by aiding the user in simplifying software testing practices through its various usecases namely Quality Prediction,
+		Test Optimization, Test Coverage and Adaptive Planning, and thereby offering an all the round acceleration to quality 
+		assurance and testing of software. Hence CRESTA can serve as not only a test accelerator and test case optimizer but also a predictor of quality of future releases based on the current and past releases.</p>
+	</span>
+	<span id="purpose">
+		<h4 style="color:black;font-weight:bold">PURPOSE</h4>	 
+		<p>The proceeding manual has been documented with the aim of guiding the users of CRESTA through the various steps of launching and operating this application along with offering the user with a general overview about the basic components and architecture of the application’s software.</p>
+		<p>NOTE: For further details on the purpose of a particular usecase, please refer the section on ‘Usecase Description’ in the CRESTA User Manual for the respective usecase</p>
+	</span>
+	<span id="goals">
+		<h4 style="color:black;font-weight:bold">GOALS</h4>	 
+		<p>The general objective of this document is as enlisted:</p>
+		<ul>
+			<li>To educate the user of the CRESTA application with information regarding the basic structure of the software system behind the application’s build.</li>
+			<li>To provide the user with a list of features and capabilities of the tool in order to familiarize the user with the application</li>
+			<li>To educate the user on the various features and usecases of the application.</li>
+			<li>To highlight the functionalities of the application </li>
+			<li>To provide clear instructions to educate the user on how to use the application.  </li>
+		</ul>
+	</span>
+	<span id="aspire_technical_overview">
+		<h4 style="color:black;font-weight:bold">ASPIRE TECHNICAL OVERVIEW</h4>	 
+		<p>WEB Application: </p>
+		<p>This is the user interface for different Actors e.g. Project Manager (PM).
+		Through Web application user can choose different Matrices which will be provided by System.
+		These inputs will trigger the ETL part of the system, and at the end of whole processing, appropriate result will be shown on the WEB UI</p>
+		<p>ETL:</p>
+		<p>ETL is the component we used because as name suggests it has a capability to Extract, Transform and Load the data in required format. Considering this significance, ETL will extract the date from external DB e.g. DB of Redmine tool which is in MySQL. There will be two outputs from this tool, first one is extracted / Transformed data will be stored in CRESTA DB. Secondly, csv will be generated which will read by Jubatus server</p>
+		<p>Jubatus client: Its main purpose is to start the Jubatus server and send required data as an input.</p>
+		<p>Jubatus Server: </p>
+		<p>Jubatus is the first open source platform for online distributed machine learning on the data streams of Big Data. Jubatus uses a loose model sharing architecture for efficient training and sharing of machine learning models, by defining three fundamental operations; Update, Mix, 
+		and Analyse, in a similar way with the Map and Reduce operations in Hadoop. To know more about Jubatus please visit link: http://jubat.us there are 8 different API’s are provided in Jubatus server, such as Classification, Regression, etc. Jubatus server, reads the configuration file as per requirement. To predicate Jubatus server needs to learn/train itself. And to train Jubatus server, it reads data from csv file which is generated from ETL.
+		Next, after training, depending on the algorithm provided in configuration file it predicate the output which will be displayed on WEB UI component</p>
+		<p>CRESTA DB: </p>
+		<p>It stores data related to User Management and Model Mapping. Moreover, it also stores data which was provided by ETL e.g. Project list.</p>
+		<h2 style="color:black;font-weight:bold">Organization Manual</h2>
+		<p>A brief description of the nature of the aforementioned sections are provided below:</p>
+		<ul>
+			<li>CRESTA Technical Overview section explains in general terms the system and the purpose for which it is intended. </li>
+			<li>System Summary section provides a general overview of the system. The summary outlines the uses of the system’s hardware and software requirements, system’s configuration, user access levels and system’s behavior in case of any contingencies.</li>
+			<li>Getting Started section explains how to get CRESTA and install it on the device. The section presents briefly system menu.</li>
+			<li>Usecase Description section provides a general description on what the usecase included in this manual is all about.</li>
+			<li>Using the System section provides a detailed description of Application functions. </li>
+			<li>Reporting section describes in what way information collected by the application are presented and how to access the information. </li>
+			<li>Customization section provides the user with details regarding customization of user inputs to the application while using CRESTA.</li>
+			<li>Appendix section provides the description of abbreviations and terms used in this document</li>
+		</ul>
+	</span>
+	<span id="system_summary">
+		<h4 style="color:black;font-weight:bold">SYSTEM SUMMARY</h4>	 
+		<h5>System compatibility:</h5>
+		<p>OS: Windows 7 and above (32 - bit or 64 - bit)
+		Web Browsers: Chrome – ver. 35 and Above or IE – ver. 10 and above or Mozilla – ver. 35 and Above</p>
+		<h5>Server Details: </h5>
+		<p>Operating System:  Linux Ubuntu (version- 17.07.5, Distribution ID – UBUNTU)
+		Tomcat Server: 8.0.36</p>
+		<p>CRESTA can be used immediately without any further configuration</p>
+		<p>*For details on installation pre-requisites and procedures for CRESTA refer to the CRESTA Installation Guide document.</p>
+		<h5>User Management and Access Privileges </h5>
+		<h6>Types of Users: </h6>
+		<p>Only Authorized users can use the application and are able to save the data to database, authorized users being the personal who are given access to the CRESTA application login and SVN, where the former is for using the application for software test acceleration purposes and the latter for updating and maintaining the application database, through a set of unique credentials. Also it is to be noted that either both or one of the aforementioned accesses can be given to a single user as per the requirement.</p>
+		<h6>Roles</h6>
+		<p>Customization of options provided (for example under Project, Prediction and Trend Fields respectively) presented on the Home Page based on user role depended login, user role being Project Manager, Team Lead or Admin is not yet developed. Hence displayed home page information will be same irrespective of the category of user login for each of the four usecases although admin will have a separate access for customization purposes.</p>
+	</span>
+	<span id="getting_started">
+		<h4 style="color:black;font-weight:bold">GETTING STARTED</h4>	
+		<p>Getting Started section explains how to use CRESTA (Comprehensive Robotic Engine for Software Test Acceleration). The section presents briefly system menu. </p>
+		<span id="tool_bar_features">
+			<h6 style="color:black;font-weight:bold">Tool bar features</h6>	 
+			<ul>
+				<li>About: This tab includes about the ‘Machine Learning’ concepts and also the contributors to the CRESTA Web Application.</li>
+				<li>CRESTA Features: This tab includes the CRESTA Use cases and the Scope for CRESTA.</li>
+				<li>CUSTOMERS: This tab gives us a brief idea regarding the existing users of the CRESTA Web Application</li>
+				<li>KNOWLEDGE: This tab briefs about the information regarding the newer technologies that has been incorporated in the web applications (i.e.; Jubatus, Predictive Analysis, Artificial Intelligence) </li>
+				<li>SETTINGS: This tab specifies the information regarding the Quality Matrices that can be predicted using the Application.</li>
+				<li>COPYRIGHTS: This specifies the NTT DATA Legal notices which includes Copyright Notice, Trademark Notice, License Restrictions, Warranty/Consequential Damages Disclaimer, Warranty Disclaimer, Restricted Rights Notice, Hazardous Applications Notice, Third-Party Content, Products, and Services Disclaimer, Alpha and Beta Draft Documentation Notice.</li>
+			</ul>
+		
+		</span>
+		
+	</span>
+	
+	
+{% endblock %}

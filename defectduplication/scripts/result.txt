@@ -1,0 +1,2 @@
+discrepancy null validation pm tablessteps reproduce  jsr install date time eventstarttime eventendtime odsossoutage table  run odschlogistical upd pm workflow expected resultwhen jsr intsall date time equal eventstart eventend time ossoutageflag updated  actual resultwhen jsr intsall date time equal eventstart eventend time ossoutageflag updated
+discrepancy null validation pm tablesin odschlossofsmwanconn table chid present outagestart date previous month mart level data getting inserted respective month null values column except pmnotmet please refer attached screen shot

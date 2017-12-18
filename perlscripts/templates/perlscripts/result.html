@@ -1,0 +1,34 @@
+{% extends "juniper/result1.html" %}
+
+{% block content %}
+<h3  class="perlHeading"><strong style="color:white;">Perl Scripts Object Mapping</strong></h3>
+		
+		<div id="table_container">
+		<table style="background-color:white">
+			<tr><th><strong style="color:orange;font-size:16pt">EMAIL</strong></th></tr>
+			{% for classification,files in data %}
+				{% if classification == "EMAIL" %}
+					<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+		<table style="background-color:white">
+			<tr><th><strong style="color:orange;font-size:16pt">CALANDER</strong></th></tr>
+			{% for classification,files in data %}	
+				{% if classification == "CAL" %}
+					<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+		<table style="background-color:white">
+			<tr><th><strong style="color:orange;font-size:16pt">FILE</strong></th></tr>
+			{% for classification,files in data %}	
+				{% if classification == "FILE" %}
+					<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+      	</div>
+
+
+{% endblock %} 

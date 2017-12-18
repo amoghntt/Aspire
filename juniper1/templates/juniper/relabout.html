@@ -1,0 +1,27 @@
+{% block content %}
+<div  style="background-color:white">
+	<ul>
+		<li style="color:black;"><a href="/juniper/releasenotes" style="color:black;font-size:16pt;"><label class="node">Release Notes</a></label>
+			<ul>
+			<li><a href="/juniper/releasenotes" style="color:black;">Cresta Release 2.0 (Aspire)</a></li>
+				
+				
+			</ul>
+			
+ </div>
+ <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript">
+ 
+ (function() {
+  var treePaneNodes = $('#treePane').find(".node");
+  treePaneNodes.next("ul").hide();
+  $('#treePane').find(".open").next("ul").show();;
+  treePaneNodes.on('click', function() {
+   $(this).next("ul").first().toggle();
+   $(this).toggleClass("open");
+  })
+ })();
+ </script>
+
+
+{% endblock %} 

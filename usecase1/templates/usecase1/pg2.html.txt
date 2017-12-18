@@ -1,0 +1,94 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+
+	 <form action="/usecase1/result/" method="post">{% csrf_token %}
+	 
+	 <h2 style="color:white;font-weight:bold">Aspire Prediction</h2>
+	 <table>
+	 <tr>
+	 	<td style="border: 0px;border-collapse: collapse;" name ="Project"><strong style="color:white;font-size:15pt">Project:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;"> 
+	 		<select style="color:black;font-size:16pt">
+	  			
+				<option value="1">Aspire</option>
+			</select>
+	 	</td>
+	 </tr>
+
+
+	 <tr>
+	 	<td style="border: 0px;border-collapse: collapse;" ><strong style="color:white;font-size:15pt">Algorithm:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;"> 
+	 		<select  name="Algorithm" style="color:black;font-size:16pt">
+	  			<option value="1">Linear Regression</option>	
+				<option value="2">SVR Linear Regression</option>
+				<option value="3">SVR RBF Kernel</option>
+			</select>
+	 	</td>
+	 </tr>
+
+
+	<tr>
+	 	<td style="border: 0px;border-collapse: collapse;" ><strong style="color:white;font-size:15pt">Prediction:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;"  >
+	 		<select style="color:black;font-size:16pt" name="Module">
+	  			<option value="1">Defect Density</option>
+				<option value="2">Defect Acceptance Rate</option>
+				<option value="3">Defect Defferal Rate</option>
+				<option value="4">All Defect</option>
+				<option value="5">Functional Defects</option>
+				<option value="6">Defect Leakage</option>
+				<option value="7">Defect Modules</option>
+			</select>
+	 	</td>
+	 </tr>
+
+
+	 <tr>
+	 	<td style="border: 0px;border-collapse: collapse;"><strong style="color:white;font-size:15pt">Trend:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;">
+			<select style="color:black;font-size:16pt" name="Trend">
+				<option value="1">Release Wise</option>	
+				<option value="2">Module</option>
+				<option value="3">Sprint</option>
+				<option value="4">Submodule</option>
+				<option value="5">Page</option>
+				<option value="6">Project wise</option>
+				<option value="7">Customer wise</option>
+				<option value="8">Over the period of Time</option>
+				<option value="9">Month</option>
+				<option value="10">Quarter</option>
+				<option value="11">Year</option>
+			</select>
+		</td>
+	 </tr>
+
+	 </table>
+
+	 <!--<table>
+	 	<tr>
+	 		<td style="border: 0px;border-collapse: collapse;">
+				<strong style="color:white;">Java_Files:</strong>
+			</td>
+			<td style="border: 0px;border-collapse: collapse;">
+				<input type="file" class="filestyle"  webkitdirectory directory multiple/>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0px;border-collapse: collapse;">
+				<strong style="color:white;">Training_Data:</strong>
+			</td>
+			<td style="border: 0px;border-collapse: collapse;">
+				<input type="file" class="filestyle" webkitdirectory directory multiple/>
+			</td>
+		</tr>
+	</table>-->
+	
+
+    <input type="submit" class="btn btn-theme" value="Metrics" />
+</form>
+
+	</center>
+{% endblock %}

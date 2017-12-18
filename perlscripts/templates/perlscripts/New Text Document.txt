@@ -1,0 +1,8 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+
+<h2>{{ str(data) }}</h2>
+
+  
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "juniper/help.html" %}
+{% load staticfiles %}
+{% block content %}
+
+	 <center>
+	 
+	 <h2 style="color:black;font-weight:bold">ASPIRE SAMPLE KIT</h2>
+</center>
+<br>
+<br>
+<span id="quality_prediction">	 
+	 <h4>Quality Prediction</h4>
+	 <p>Using this Tab, The user can do all the following Predictions for predicting project quality for future releases/modules based on certain prediction questions, referring to the historical data present for the previous releases for the project selected from the data base.</p>
+	 <p>The predictions considered are:</p>
+	 <ul>
+		<li>A)	Defect Density.</li>
+		<li>B)	Defect Deferral Rate.</li>
+		<li>C)	Defect Acceptance</li>
+		<li>D)	All Defects.</li>
+		<li>E)	Functional Defects.</li>
+		<li>F)	Defective Modules.</li>
+	 </ul>
+	 <p>Modules as categorized as following based on “RISKS”</p>
+	 <ul>
+		<li>Normal Modules--> Green</li>
+		<li>Medium Risk Modules--> yellow</li>
+		<li>High Risk Modules-->Red</li>
+	</ul>
+	<p>For each prediction question there are specific metric(s) associated with them. System predicts the values for the metric(s) for future release and finds out the status of the project for a particular Release.</p>
+	<ul>
+		<li>1)	Green: NORMAL</li>
+		<li>2)	Amber: MEDIUM RISK</li>
+		<li>3)	Red: HIGH RISK</li>
+	</ul>
+	<p>This prediction helps in taking the necessary actions to control the “Quality” for future releases by controlling the “Defects in the modules”.</p>
+</span>
+<span id="test_optimization">
+		<h4>Test Optimization</h4>
+		<p>Using this Tab,The user can  Classify Test cases and segregate the Test cases according to various  categories.</p>
+		<p>The user is able to Identify duplicate and redundant test cases</p>
+		<ul>
+		<li>1)	Duplicate Test Cases--> >90% match</li>
+		<li>2)	Redundant test cases--> 70% - 90% match</li>
+	</ul>
+		
+</span>
+<span id="test_coverage">
+		<h4>Test Coverage</h4>
+		<p>Using this Tab, The user can do all the following actions for calculating the Test coverage (Average, Poor or Good)</p>
+		<p>The user is able to calculate the “Adequate Test Coverage” by selecting the project and the “Specific Requirement” from the Requirement Specification Document and checks for the Test case coverage. Referring to the historical data present for the previous releases for the project selected from the data base the “Test Case Coverage” is determined.</p>
+		<ul>
+		<li>1)	Green: NORMAL--> Test coverage is Good.</li>
+		<li>2)	Amber: MEDIUM RISK--> Test coverage is Average.</li>
+		<li>3)	Red: HIGH RISK-->Test coverage is Poor.</li>
+	</ul>
+		</span>
+<span id="Adaptive Planning">
+	    <h4>Adaptive Planning</h4>
+		<p>Using this tab,The User can  which can predict some of the parameters related to Programme Management.</p>
+		<p><p>The user is able to calculate the "Programme Management" parameters  by referring to the historical data present for the previous releases for the project selected from the data base</p></p>
+		<p>The user is able to calculate the following parameters</p>
+		<ul>
+		<li>1)Adaptive Budget	</li>
+		<li>2)Project status </li>
+		
+	</ul>
+		</span>
+		
+
+	
+	
+	
+{% endblock %}

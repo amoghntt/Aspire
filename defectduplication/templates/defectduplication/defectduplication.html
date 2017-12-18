@@ -1,0 +1,39 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+	 <h2 style="color:white;font-weight:bold">Defect Duplication</h2>
+	 <h3 style="color:white;font-weight:bold;font-size:20px">Optimization of Duplicate Defects Logged </h3></center><br>
+<div style="padding-left:80px">
+	<p><strong style="color:white;font-size:15pt;">This use case finds duplicate defects logged.</strong></p>
+	<!--<p><strong style="color:white;font-size:15pt;">It will be extended later to identify common library functions.</strong></p></div>-->
+<div style="padding-left:80px">	
+	<form method="post" enctype="multipart/form-data" action="/defectduplication/">
+    {% csrf_token %}
+	
+    <input type="file" name="myfile" style="align:left"><br>
+    <button type="submit" style="leftpadding:20px">Upload</button>
+  </form>
+  <br>
+ 
+<form action="/defectduplication/result/" method="post">
+{% csrf_token %}
+	{% if uploaded_file_url %}
+    <p><strong style="color:white;font-size:13pt;align:left;">File uploaded</strong> </p>
+  {% endif %}
+  <strong style="color:white;font-size:15pt;align:left">Corpora Dictionary :</strong></td>
+  <select style="color:black;font-size:16pt;align:left" name="corpora">
+	  			<option value="1">English</option>
+				<option value="2">German</option>
+				<option value="3">Spanish</option>
+				
+			</select>
+			<br>
+			<br>
+  <center> <input type="submit" class="btn btn-theme" value="Enter" /></center>
+	<br>
+	
+</form>
+</div>
+	
+{% endblock %}

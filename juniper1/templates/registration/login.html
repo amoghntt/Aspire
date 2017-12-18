@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Juniper</title>
+	
+	{% load staticfiles %}
+	<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap.css' %}" type='text/css'/>
+	<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap-theme.css' %}" type='text/css'/>
+	<link rel='stylesheet' href="{%  static 'juniper/css/style.css' %}" type='text/css'/>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+<style type="text/css">
+  #tableContainer-1 {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  #tableContainer-2 {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+  }
+  label {
+color: #fff; /* makes the text-black */
+}
+.footer_wrapper {
+width:100%;
+position:fixed;
+bottom:0px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{%  static 'juniper/js/bootstrap.min.js' %}"></script>
+    <!-- Bootstrap 
+    <link href="juniper/css/bootstrap.css" rel="stylesheet">
+	<link href="juniper/css/bootstrap-theme.css" rel="stylesheet">
+
+    <!-- siimple style 
+    <link href="juniper/css/style.css" rel="stylesheet">
+    
+    <!-- =======================================================
+        Theme Name: Siimple
+        Theme URL: https://bootstrapmade.com/free-bootstrap-landing-page/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+  </head>
+
+  <body style="background-image: url('{% static "juniper/images/main-bg.jpg"%}');height:150%";>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">@2017 copyright nttdata inc.</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Sign up</a></li>
+			<li><a href="#">Sign in</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1>Aspire</h1>
+					<h2 class="subtitle">Machine Learning for Testing</h2>
+					
+					  <div id="tableContainer-1">
+					  <div id="tableContainer-2">
+						<table>
+						<tr><td><form method="post" align="center" autocomplete="off">
+    					{% csrf_token %}
+   						 {{ form.as_p }}
+    					<button type="submit" class="btn btn-theme">Login</button>
+  						</form>
+  						</td></tr>	
+					
+						</table>
+					 <!-- <form method="post">
+					        {% csrf_token %}
+   							 {{ form.as_p }}
+					  
+					  <button type="submit" class="btn btn-theme">Login</button>
+					  </form>-->
+					  </div>
+					</div>
+									
+				</div>
+				<div class="col-lg-4 col-lg-offset-2">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					  <ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					  </ol>					
+					  <!-- slides -->
+					  <div class="carousel-inner">
+						<div class="item active" style="height:50%;width:50%">
+						  <img src="{%  static 'juniper/images/logo.JPG' %}" alt="">
+						</div>
+						<div class="item">
+						  <img src="{%  static 'juniper/images/juniper1.jpg' %}" alt="">
+						</div>
+						<div class="item">
+						  <img src="{%  static 'juniper/images/juniper3.jpg' %}" alt="">
+						</div>
+					  </div>
+					</div>		
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<br><br>
+	
+	<footer id="footer">
+    <div class="container-fluid" style="margin-left:15px;position:relative;">
+	<p class="copyright" >Aspire leverages intelligent robotic automation technologies such as machine learning, AI and text analytics for predictive defects analysis and test optimization. It presents user-friendly results in the form of dashboards, graphs, charts and tables.</p>
+    </div>
+  </footer>
+	<!--<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+	            <p class="copyright">
+				 
+				   Aspire leverages intelligent robotic automation technologies such as machine learning, AI and text analytics for predictive defects analysis and test optimization. It presents user-friendly results in the form of dashboards, graphs, charts and tables.
+				   </p> <!-- 
+                        All the links in the footer should remain intact. 
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Siimple
+                    
+                    <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+               
+				
+           </div>
+		</div>		
+	</div>	
+	</div>-->
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+	 <h2 style="color:white;font-weight:bold">Optimization</h2>
+	 <h3 style="color:white;font-weight:bold;font-size:20px">Scripts and Test case Optimization</h3></center><br>
+<div style="padding-left:80px">
+	<p><strong style="color:white;font-size:15pt;">This use case finds duplicate scripts and test cases.</strong></p>
+	<p><strong style="color:white;font-size:15pt;">It will be extended later to identify common library functions.</strong></p></div>
+<div style="padding-left:80px">	
+	<form method="post" enctype="multipart/form-data" action="/scriptsOptimization/">
+    {% csrf_token %}
+	
+    <input type="file" name="file_field" webkitdirectory directory multiple/><br>
+    <button type="submit" style="leftpadding:20px">Upload</button>
+  </form>
+  <br>
+ 
+<form action="/scriptsOptimization/result/" method="post">{% csrf_token %}
+	{% if uploaded_file_url %}
+    <p><strong style="color:white;font-size:13pt;align:left;">File uploaded</strong> </p>
+  {% endif %}
+  <strong style="color:white;font-size:15pt;align:left">Corpora Dictionary :</strong></td>
+  <select style="color:black;font-size:16pt;align:left" name="corpora">
+	  			<option value="1">English</option>
+				<option value="2">German</option>
+				<option value="3">Spanish</option>
+				
+			</select>
+			<br>
+			<br>
+  <center> <input type="submit" class="btn btn-theme" value="Enter" /></center>
+	<br>
+	
+</form>
+</div>
+	
+{% endblock %}

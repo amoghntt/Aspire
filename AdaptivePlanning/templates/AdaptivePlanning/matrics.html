@@ -1,0 +1,439 @@
+{% extends "AdaptivePlanning/home.html" %}
+
+{% block content %}
+	 <center>
+	<h1 style="color:White;"><b> Adaptive Planning </b></h1>
+        
+	<div style="color:White;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" align="center"
+			style="color:White;width: 100%; border-collapse: collapse;border-style: solid;border-color:black;">
+
+			<thead>
+				<tr>
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+				
+					<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+<tbody>
+                              
+					
+						
+<thead>
+<tr>  
+                                    
+				{%for r in release%}
+                 <td><input type="radio" class="myradio" name="myradio"></td>             
+              <th style=><input type="radio" name="gender" value="female">{{r}}</th>
+{%endfor%}
+</tr>
+<tr>
+{%for dd in  DD%}
+                                                 <td style=>{{dd}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dl in  DefectLeakage%}
+                                                 <td style=>{{dl}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dr in  DefectRejection%}
+                                                 <td style=>{{dr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for tcc in  TestCaseCount%}
+                                                 <td style=>{{tcc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for ac in  ApplicationComplexity%}
+                                                 <td style=>{{ac}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dk in  DomainKnowledge%}
+                                                 <td style=>{{dk}}</td>
+{%endfor%}
+
+</tr>
+<tr>
+{%for ts in  TechnicalSkills%}
+                                                 <td style=>{{ts}}</td>
+{%endfor%}
+
+</tr>
+</tr>
+<tr>
+{%for rqc in  ReqQueryCount%}
+                                                 <td style=>{{rqc}}</td>
+{%endfor%}
+
+</tr>
+
+</tr>
+<tr>
+{%for crc in  CodeReviewComments%}
+                                                 <td style=>{{crc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for drc in  DesignReviewComments%}
+                                                 <td style=>{{drc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for nr in  NoofResources%}
+                                                 <td style=>{{nr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for bu in  BudgetinUse%}
+                                                 <td style=>{{bu}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for eta in  ETA%}
+                                                 <td style=>{{eta}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for cr in  CostofResource%}
+                                                 <td style=>{{cr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for eff in  Efficiency%}
+                                                 <td style=>{{eff}}</td>
+{%endfor%}
+
+</tr>
+                                              
+                                 
+                                
+
+                         
+	</center>
+</thead>
+	</tbody>
+		</table>
+	</div>
+
+	</div>
+
+
+
+
+
+<div style="color:White;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" id="recentData" align="center"
+			style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+			<thead>
+				<tr>
+					
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+									<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+</thead>
+<tbody>
+                              
+					
+						
+<thead>
+ 
+                                    
+				{%for r in release%}
+                   
+             
+
+{%endfor%}
+
+<tr>
+{%for dd in  DD%}
+{% if dd == 1005 %}
+       <td style=><input type="radio" name="DD">{{dd}}</td>
+{%else%}
+<td style=>{{dd}}</td>
+{%endif%}
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dl in  DefectLeakage%}
+                                                 <td style=>{{dl}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dr in  DefectRejection%}
+                                                 <td style=>{{dr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for tcc in  TestCaseCount%}
+                                                 <td style=>{{tcc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for ac in  ApplicationComplexity%}
+                                                 <td style=>{{ac}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for dk in  DomainKnowledge%}
+                                                 <td style=>{{dk}}</td>
+{%endfor%}
+
+</tr>
+<tr>
+{%for ts in  TechnicalSkills%}
+                                                 <td style=>{{ts}}</td>
+{%endfor%}
+
+</tr>
+</tr>
+<tr>
+{%for rqc in  ReqQueryCount%}
+                                                 <td style=>{{rqc}}</td>
+{%endfor%}
+
+</tr>
+
+</tr>
+<tr>
+{%for crc in  CodeReviewComments%}
+                                                 <td style=>{{crc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for drc in  DesignReviewComments%}
+                                                 <td style=>{{drc}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for nr in  NoofResources%}
+                                                 <td style=>{{nr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for bu in  BudgetinUse%}
+                                                 <td style=>{{bu}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for eta in  ETA%}
+                                                 <td style=>{{eta}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for cr in  CostofResource%}
+                                                 <td style=>{{cr}}</td>
+{%endfor%}
+
+</tr>
+
+<tr>
+{%for eff in  Efficiency%}
+                                                 <td style=>{{eff}}</td>
+{%endfor%}
+
+</tr>
+                                              
+                                 
+                                
+
+                         
+	</center>
+</thead>
+	</tbody>
+		</table>
+	</div>
+
+	</div>
+
+
+
+
+                              
+					
+						
+<script>
+		$(".myradio").on('click', function() {
+			$id = $(this).data('id');
+
+			// getting parent element of the selected radio button
+			$parent = $(this).parent().parent();
+			$("#editGrid").show();
+
+			$totalRecords = $('td', $parent).length;
+
+			for ($count = 0; $count < $totalRecords; $count++) {
+				$input = $("#editGrid td").eq($count);
+
+				if ($('input', $input).length > 0) {
+					$('input', $input).val($('td', $parent).eq($count).html());
+				}
+			}
+
+		});
+	</script>
+
+	<br></br>
+	<form:form id="predictForm" method="post"
+		action="predictAdaptivePlanning" modelAttribute="adaptivePlanningBean">
+		<div id="editGrid" style="width: 100%; display: none;" align="center">
+			<table id="selectedTable" align="center" style="width: 100%;">
+				<tr>
+					<td style="width: 50px;"></td>
+					<td><input type="hidden" min="0" step="1"
+						style="width: 45px; text-align: center" name="releaseId"
+						id="release" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="defectDensity"
+						id="defectDensity" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="defectLeakage"
+						id="defectLeakage" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="defectRejection"
+						id="defectRejection" /></td>
+					<td><input type="hidden" min="0" step="1"
+						style="width: 45px; text-align: center" /></td>
+					<td width="30px"></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="testCaseCount"
+						id="testCaseCount" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="applicationComplexity" id="applicationComplexity" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="domainKnowledge"
+						id="domainKnowledge" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="technicalSkills"
+						id="technicalSkills" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="requirementQueryCount" id="requirementQueryCount" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="codeReviewComments"
+						id="codeReviewComments" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="designReviewComments" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="numberOfResources"
+						id="numberOfResources" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="budgetInUse" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="numberOfDaysToComplete" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="costOfResource" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="efficiency" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center" name="projectStatus" /></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 45px; text-align: center"
+						name="availabilityOfBudget" /></td>
+				</tr>
+			</table>
+		</div>
+
+<br/><br/>
+
+
+<div align="center" onclick="show('id1');" style="width: 100%;">
+			<input type="submit" class="button" id="btnhome" value="Predict"
+				onclick="return validateForm()" />
+		</div>
+	</form:form>
+
+	<br>
+	<br>
+
+	</div>
+
+
+
+
+
+
+{% endblock %}

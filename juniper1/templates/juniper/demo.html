@@ -1,0 +1,53 @@
+{% extends "juniper/main.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<div style="display: table-row">
+<div style="display: table-cell;padding-left:2em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/JuniperAspireDemo.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">Juniper Aspire Demo</h3></center>
+</div>
+
+<div style="display: table-cell;padding-left:9em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/P2P_demo.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">Aspire P2P converter Demo</h3></center>
+</div>
+<div style="display: table-cell;padding-left:9em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/SampleTestCase.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">JunOS Sample Testcase Demo</h3></center>
+</div>
+</div>
+<div style="display: table-row">
+<div style="display: table-cell;padding-left:2em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/usecase1_prediction.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">Aspire Prediction Demo</h3></center>
+</div>
+<div style="display: table-cell;padding-left:9em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/usecase2_test_optimisation.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">Aspire Optimization Demo</h3></center>
+</div>
+<div style="display: table-cell;padding-left:9em">
+<video width="320" height="240" controls>
+  <source src="{% static "juniper/videos/usecase3_test_coverage.mp4"%}" type="video/mp4">
+  
+ </video>
+<center><h2 style="color:white;font-weight:bold">Aspire Test coverage Demo</h3></center>
+</div>
+
+</div>
+{% endblock %}

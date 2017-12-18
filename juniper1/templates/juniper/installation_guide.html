@@ -1,0 +1,157 @@
+{% extends "juniper/help.html" %}
+{% load staticfiles %}
+{% block content %}
+
+	 <h2 style="color:black;font-weight:bold;align:center">Installation Guide</h2>
+	 <span id="introduction">
+		<h4 style="color:black;font-weight:bold">Introduction</h4>
+		<p>CRESTA, an abbreviation for Comprehensive Robotic Engine for Software Test Acceleration is a web based application that works on the principle of machine learning and aims at resolving various aspects of Software testing processes by aiding the user in simplifying software testing practices through its various use cases namely Quality Prediction, Test Optimization, Test Coverage and Adaptive Planning, and thereby offering an all the round acceleration to quality assurance and testing of software. Hence CRESTA can serve as not only a test accelerator and test case optimizer but also a predictor of quality of future releases based on the current and past releases.</p>
+	 </span>
+	 <span id="purpose">
+		<h4 style="color:black;font-weight:bold">Purpose</h4>
+		<p>This document is provided to serve as a template for customers regarding installation instructions for CRESTA software application by educating the user through the detailed steps of how to set up and build the entire CRESTA machine and run it successfully. </p>
+		<p>This procedure is an obligation for contractors to provide installation instructions in order to reduce possible manipulation mistakes, errors, misinterpretations, loss of time to find the correct information, etc., during the software installation phase for the integration team.</p>
+	 </span>
+	 <span id="scope">
+		<h4 style="color:black;font-weight:bold">Scope</h4>
+		<p>This document is intended for the customers to install CRESTA application seamlessly and without any technical challenges.</p>
+		<p>Integrators are not experts of the application, hence the need of a step-by-step instructions on how to install.</p>
+		<p>This document describes how to set up CRESTA mainly based on Docker Image using a Linux server.
+			You can quickly confirm CRESTA working on your typical business PC(Windows) 
+			It will take 30 minutes to go through the installation steps, take 30 minutes to run sample kit.
+			Aims to showcase use, not for heavy use. If requesting high performance (such as calculating similarity much faster), you need to design configuration furthermore. This topic is excluded (briefly mentioned in reference section).
+		</p>
+	 </span>
+	 <span id="goals">
+		<h4 style="color:black;font-weight:bold">Goals</h4>
+		<p>•	The goal of this document is to educate the user on the software and hardware prerequisites and the basic stepwise procedure to be able to install CRESTA successfully into their machines.</p>
+		<p>•	Hence this document would also be useful to the user in verifying the following:</p>
+		<p>•	Check properly that all the prerequisites has been done or not which will be like an Acceptance procedure used to detect, as soon as possible, any possible defect, Installation environment need to be set properly for application</p>
+		<p>User should be able to launch the CRESTA application</p>
+		<p>User can refer the CRESTA User Manual for how to use the CRESTA application for the different use cases</p>
+	 </span>
+	 <span id="system_requirements">
+		<h4 style="color:black;font-weight:bold">System Requirements</h4>
+		<span id="hardware_requirements">
+			<h5 style="color:black;font-weight:bold">Hardware Requirements</h5>
+			<p>Desktop/Laptop, Intel Pentium 5 4th generation and above.(CPU), RAM--> 4GB and above, Hard drive--> 300GB and above.</p>
+			<p>System supports Hardware Virtualization Technology and that virtualization is enabled</p>
+			<p>-	For further information, refer to the page below “Step1: Check your version”</p>
+		</span>
+		<span id="software_requirements">
+			<h5 style="color:black;font-weight:bold">Software Requirements</h5>
+			<ul>
+				<li>pip (9.0.1)</li>
+				<li>mysql-connector-python (2.0.4 or the latest version)</li>
+				<li>nltk (3.2.1) **</li>
+				<li>numpy (1.11.3+mkl)</li>
+				<li>pandas (0.19.2)</li>
+				<li>scikit-learn (0.18.1)</li>
+				<li>scipy (0.18.1)</li>
+				<li>tabulate (0.7.7)</li>
+				<li>xlrd (1.0.0)</li>
+				<li>tabulate(0.7.7)</li>
+				<li>future (0.16.0)</li>
+				<li>Jubakit</li>	
+			</ul>
+		</span>
+	 </span>
+	 
+	 <span id="user_account_controls">
+		<h4 style="color:black;font-weight:bold">User Account Control</h4>
+		<p>This is to be done in windows server application. User Account Control (UAC) is a security component that enables users to perform common tasks as non-administrators, and as administrators without having to switch users, log off or use Run As. User accounts that are members of the local administrators group run most applications as a standard user. By separating user and administrator functions, UAC helps users move towards using standard user rights by default.</p>
+		<p>This guide covers the following scenario for UAC:</p>
+	 </span>
+	 <span id="install_python_libraries">
+		<h4 style="color:black;font-weight:bold">Install Python Libraries</h4>
+		<p>User can download python library files from the following URL:</p>
+		<p>https://pypi.python.org/pypi/</p>
+		<p>1.	Type the following command for Python installation: $ sudo apt-get install python2.7.13</p>
+		<p>2.	Do this for Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip by default.</p>
+		<p>3.	To see if pip is installed, open a command prompt and run: $ command –v pip</p>
+		<p>4.	Following are the list of the supporting machine learning libraries the user will be required to install:</p>
+		<ul>
+				<li>pip (9.0.1)</li>
+				<li>mysql-connector-python (2.0.4 or the latest version)</li>
+				<li>nltk (3.2.1) **</li>
+				<li>numpy (1.11.3+mkl)</li>
+				<li>pandas (0.19.2)</li>
+				<li>scikit-learn (0.18.1)</li>
+				<li>scipy (0.18.1)</li>
+				<li>tabulate (0.7.7)</li>
+				<li>xlrd (1.0.0)</li>
+				<li>tabulate(0.7.7)</li>
+				<li>future (0.16.0)</li>
+				<li>botto 2.44.0</li>
+				<li>Cython 0.25.2</li>
+				<li>gensim 0.13.0</li>
+				<li>lxml 3.6.4</li>
+				<li>botto 2.44.0</li>
+				<li>Jubakit</li>	
+		</ul>
+		<p>5.	Type the following command for installing the above mentioned machine learning libraries: $ pip install pandas</p>
+		<p>6.	Using the above pip, install all the supporting libraries, from some of the above libraries may have additional dependencies on other packages which will be downloaded and installed dynamically when using the above command for installation</p>
+	 </span>
+	 <span id="running_the_aspire">
+		<h4 style="color:black;font-weight:bold">Running the Aspire</h4>
+		<span id="login_to_aspire">
+			<h5 style="color:black;font-weight:bold">Login to ASPIRE</h5>
+			<ul>
+				<li>1.	Open the browser and go to http://<ip_address>:port/cresta</li>
+				<li>2.	Login with credential -  Username: cresta / Password: cresta123</li>
+				<li>3.	Confirm the Sample Kit as demonstrated in successive sub sections</li>
+			</ul>
+		</span>
+		<span id="run_usecase1">
+			<h5 style="color:black;font-weight:bold">Run Usecase1</h5>
+			<ul>
+				<li>1.	Go to Quality Prediction tab.</li>
+				<li>2.	Select Project, Prediction & Trend. Click on metrics button</li>
+				<li>3.	On Metrics page calculate UCL & LCL and click metrics button.</li>
+				<li>4.	Prediction page will show the metric predicted for future release.</li>
+			</ul>
+		</span>
+		<p>NOTE 9: For Use case1, database columns for defect density, leakage, Rejection and so on is required for prediction (i.e. Use case 1 communicates with the database for predicting the different metrics.)
+			* For further details on the steps to exercise and this use case refer the CRESTA User Manual for Quality Prediction.
+		</p>
+		<span id="run_usecase2">
+			<h5 style="color:black;font-weight:bold">Run Usecase2</h5>
+			<ul>
+				<li>1.	Go to Test Optimization tab..</li>
+				<li>2.	Select project, test case file and click on the optimize button.*</li>
+				<li>3.	Optimization page shows matrix of duplicate & redundant test cases.</li>
+			</ul>
+		</span>
+		
+		</span>
+		<span id="run_usecase3">
+			<h5 style="color:black;font-weight:bold">Run Usecase3</h5>
+			<ul>
+				<li>1.	Go to Test Optimization tab..</li>
+				<li>2.	Select project, test case file and click on the optimize button.*</li>
+				<li>3.	Optimization page shows matrix of duplicate & redundant test cases.</li>
+			</ul>
+		</span>
+		<span id="run_usecase4">
+			<h5 style="color:black;font-weight:bold">Run Usecase4</h5>
+			<ul>
+				<li>1.	Go to Test Optimization tab..</li>
+				<li>2.	Select project, test case file and click on the optimize button.*</li>
+				<li>3.	Optimization page shows matrix of duplicate & redundant test cases.</li>
+			</ul>
+		</span>
+	 <span id="referances">
+		<h4 style="color:black;font-weight:bold">References</h4>
+		<p>CRESTA User Manual UC1 -->Educates the user on the procedures related to and steps to exercise UC1 which is Quality Prediction</p>
+		<p>CRESTA User Manual UC2 -->Educates the user on the procedures related to and steps to exercise UC2 which is Test Optimization</p>
+		<p>CRESTA User Manual UC3 -->Educates the user on the procedures related to and steps to exercise UC3 which is Test Coverage</p>
+		<p>CRESTA User Manual UC4 -->ducates the user on the procedures related to and steps to exercise UC3 which is Test Coverage</p>
+		<p>CRESTA components document -->Complete information of how CRESTA build up (software, hardware and databases etc.)</p>
+	 </span>
+	 <span id="additional_information">
+		<h4 style="color:black;font-weight:bold">Additional Information</h4>
+		<p>Need to be filled</p>
+	 </span>
+	
+	
+{% endblock %}

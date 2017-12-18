@@ -1,0 +1,73 @@
+{% extends "juniper/result1.html" %}
+
+{% block content %}
+<h3  class="perlHeading"><strong style="color:white;"><span>Java Scripts Object Mapping</span></strong></h3>
+<div class="Row">
+	
+	<div class="Column">
+	<h3 style="margin-left: 120px;"><strong style="color:white;">EMAIL</strong></h3>
+			<table style="background-color:white;align:center">
+				<tr><th><strong style="color:orange;font-size:16pt">TEST_SCRIPTS</strong></th></tr>
+					{% for classification,files in perl_data %}
+						{% if classification == "EMAIL" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+	
+			<table  style="background-color:white;align:center">
+				<tr><th><strong style="color:orange;font-size:16pt">SOURCE_CODE</strong></th></tr>
+					{% for classification,files in source_data %}
+						{% if classification == "EMAIL" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+		</div>
+	
+	
+		<div class="Column">
+		<h3 style="margin-left: 100px;"><strong style="color:white;">CALANDER</strong></h3>
+			<table style="background-color:white">
+				<tr><th><strong style="color:orange;font-size:16pt">TEST_SCRIPTS</strong></th></tr>
+					{% for classification,files in perl_data %}
+						{% if classification == "CAL" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+		
+			<table  style="background-color:white">
+				<tr><th><strong style="color:orange;font-size:16pt">SOURCE_CODE</strong></th></tr>
+					{% for classification,files in source_data %}
+						{% if classification == "CAL" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+		</div>
+	
+	
+		<div class="Column">
+		<h3 style="margin-left: 120px;"><strong style="color:white;">FILE</strong></h3>
+			<table style="background-color:white">
+				<tr><th><strong style="color:orange;font-size:16pt">TEST_SCRIPTS</strong></th></tr>
+					{% for classification,files in perl_data %}
+						{% if classification == "FILE" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+		
+			<table  style="background-color:white">
+				<tr><th><strong style="color:orange;font-size:16pt">SOURCE_CODE</strong></th></tr>
+					{% for classification,files in source_data %}
+						{% if classification == "FILE" %}
+							<tr><td><strong style="color:black;font-size:15pt">{{files}}</strong></td></tr>
+						{% endif %}
+					{% endfor %}
+			</table>
+
+	</div>
+</div>
+{% endblock %} 

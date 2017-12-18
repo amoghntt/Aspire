@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>Aspire</title>
+<meta charset="utf-8" />
+{% load staticfiles %}
+<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap.min.css' %}" type='text/css'/>
+<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap.css' %}" type='text/css'/>
+<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap-theme.css' %}" type='text/css'/>
+<link rel='stylesheet' href="{%  static 'juniper/css/style.css' %}" type='text/css'/>
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+
+<style type="text/css">
+html,body{
+height:100%;
+}
+hover:hover {background-color: #f5f5f5}
+th, td {
+    border: 1px solid #00a6ff;
+    padding: 20px;
+	font-size: bold;
+}
+table {
+    border-spacing: 10px;
+	width: 50%;
+}
+input[type=file] {
+	color:white;
+    padding:0px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 2px;
+}
+
+#treePane ul {
+ list-style: none;
+}
+
+#treePane .node {
+ color: black;
+ background-image: url('{% static "juniper/images/plus.gif"%}');
+ background-position: left center;
+ background-repeat: no-repeat;
+ padding-left: 12px;
+ cursor: pointer;
+}
+
+#treePane .open {
+ background-image: url('{% static "juniper/images/minus.gif"%}');
+}
+
+#treePane ul li {
+ background-image: url('{% static "juniper/images/treeview-default-line.gif"%}');
+ background-repeat: no-repeat;
+ padding-left: 20px;
+ margin-left: -42px;
+}
+</style>
+</head>
+
+<body class="body" style="background-image: url('{% static "juniper/images/main-bg.jpg"%}')";>
+ <div class="container-fluid" style="min-height:95%; ">
+  	<div class="row">
+   		<div class="col-sm-1">
+    		 <br>
+			<center>
+	 		<img src="{% static 'juniper/images/nttlogo.png' %}" class="img-responsive" style='max-height:100px'; alt="face">
+	 		<h4 style="color:white;">NTTDATA</h4>
+			</center>
+    	</div>
+    	<div class="col-sm-10">
+     		<br>	
+			<center>
+			<h1 style="color:#fff;"><strong>Aspire</strong></h1>
+			<h4 style="color:#fff;">Machine Learning For Testing</h4> 
+			</center>
+    	</div>
+  	</div><br>
+   	<div class="row">
+     	<div class="navbar navbar-inverse" style="background-color:#b2b1d3">
+		<ul class="nav nav-pills">	
+	 		<li role="presentation"><a href="/juniper/">Home</a></li>
+ 	 		
+  	 		
+			<li role="presentation"><a href="/juniper/help">Help</a></li>
+	 		<li role="presentation"><a href="/logout/">Logout</a></li>
+			<li role="presentation" style="align:right"><a href="/juniper/about">About</a></li>
+			<h4 style="color:#fff;" align=right>Version: 2.1.15  </h4>
+        </ul>
+     	</div>
+    </div>
+    <div class="row">
+     	<div class="col-sm-3" style="background-color:white;height:700px;overflow-y: scroll;">
+     		<br>
+			<div class="col-3 menu" id="sidebar" >
+				{% include "juniper/includes/menutree.html" %}
+	 		</div>
+    	</div>
+      	<div class="col-sm-8">
+			<div class="container-fluid" style="background-color:white;height:700px;overflow-y: scroll;">
+				
+				<br><br>
+				{% block content %}
+				{% endblock %}  
+				<br><br>
+      		</div>
+     	</div>
+  	</div>
+</div>
+<br><br>
+  <footer id="footer" >
+    <div class="container-fluid" style="margin-left:15px">
+	<p class="copyright" >Aspire leverages intelligent robotic automation technologies such as machine learning, AI and text analytics for predictive defects analysis and test optimization. It presents user-friendly results in the form of dashboards, graphs, charts and tables.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

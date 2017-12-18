@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>Juniper</title>
+<meta charset="utf-8" />
+{% load staticfiles %}
+<link rel='stylesheet' href="{%  static 'juniper/css/bootstrap.min.css' %}" type='text/css'/>
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+
+
+<style type="text/css">
+  html, body {
+    height: 100%;
+  }
+  #tableContainer-1 {
+    height: 100%;
+    width: 100%;
+    display: table;
+  }
+  #tableContainer-2 {
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+  }
+
+</style>
+</head>
+
+<body class="body" align="center" style="background-image: url('{% static "juniper/images/background.jpg"%}')";>
+<div id="tableContainer-1">
+  <div id="tableContainer-2">
+<table align= "center">
+ <tr><td><strong style="font-size: 30px;">ASPIRE</strong><br /></td></tr>
+ <tr><td><strong style="font-size: 25px;">Login</strong><br /></td></tr>
+  <tr><td><form method="post" align="center">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  </td></tr>
+</table>
+</div>
+</div>
+
+  <footer>
+    <div class="container-fluid" style="margin-left:15px">
+	<p>CRESTA is a Next Generation QAT tool currently being lead and developed by NTT DATA Inc. and NTT DATA India. It is a web-based solution for analyzing historical test artifacts such as test cases, defects and defect metrics. It integrates with project and defect management tools like Redmine, ALM, JIRA and Bugzilla to collect project defects data, metrics and other artifacts. It then leverages intelligent robotic automation technologies such as machine learning, AI and text analytics for predictive defects analysis and test optimization. It presents user-friendly results in the form of dashboards, graphs, charts and tables</p>
+    </div>
+  </footer>
+</body>
+</html>

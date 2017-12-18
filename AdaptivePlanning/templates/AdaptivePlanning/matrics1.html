@@ -1,0 +1,248 @@
+{% extends "AdaptivePlanning/home.html" %}
+
+{% block content %}
+	 <center>
+		 <script type="text/javascript">
+	function show(elementId) {
+		document.getElementById("id1").style.display = "block";
+		document.getElementById("id1").disabled = false;
+
+	}
+	function validateForm() {
+		var releaseId = document.getElementById("releaseId").value;
+		var defectDensity = document.getElementById("defectDensity").value;
+		var defectLeakage = document.getElementById("defectLeakage").value;
+		var defectRejection = document.getElementById("defectRejection").value;
+		var testCaseCount = document.getElementById("testCaseCount").value;
+		var domainKnowledge = document.getElementById("domainKnowledge").value;
+		var technicalSkills = document.getElementById("technicalSkills").value;
+		var codeReviewComments = document.getElementById("codeReviewComments").value;
+		var numberOfResources = document.getElementById("numberOfResources").value;
+		var applicationComplexity = document
+				.getElementById("applicationComplexity").value;
+		var requirementQueryCount = document
+				.getElementById("requirementQueryCount").value;
+		if (releaseId == null || releaseId == "") {
+
+			alert("Please select Release!");
+			return false;
+		}
+		if (numberOfResources <= 0) {
+			alert("Number of Resources should be greater than 0!");
+			return false;
+		} else if (numberOfResources == "" || numberOfResources == null
+				|| isNaN(numberOfResources)) {
+			alert("Please Enter Number of Resources");
+			return false;
+		}
+
+		return true;
+	}
+</script>
+	<h1 style="color:white;"><b> Adaptive Planning </b></h1>
+        
+	<div style="color:White;width: 100%; height: 300px;overflow-y: scroll;"
+		align="center">
+		<table class="example" align="center"
+			style="color:White;width: 50%; border-collapse: collapse;border-style: solid;border-color:black;">
+
+			<thead>
+				<tr style="color:white;background-color:black;font-weight: bold;">
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+				
+					<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+</center>
+</thead>
+	</tbody>
+	<tbody>
+
+				{%for r in db %}
+                               
+  <tr style="color:white;background-color:black;font-weight: bold;">                                                    
+ <td style=>{{r.Release}}</td>
+<td style=>{{r.DD}}</td>
+ <td style=>{{r.DefectLeakage}}</td>
+<td style=>{{r.DefectRejection}}</td>
+ <td style=>{{r.TestCaseCount}}</td>
+<td style=>{{r.ApplicationComplexity}}</td>
+ <td style=>{{r.DomainKnowledge}}</td>
+<td style=>{{r.TechnicalSkills}}</td>
+ <td style=>{{r.ReqQueryCount}}</td>
+<td style=>{{r.CodeReviewComments}}</td>
+ <td style=>{{r.DesignReviewComments}}</td>
+<td style=>{{r.NoofResources}}</td>
+ <td style=>{{r.BudgetinUse}}</td>
+<td style=>{{r.ETA}}</td>
+<td style=>{{r.CostofResource}}</td>
+ <td style=>{{r.Efficiency}}</td>
+<td style=>{{r.ProjectStatus}}</td>
+<td style=>{{r.AvailabilityofBudget}}</td>
+
+{%endfor%}
+</tr>
+    				
+			
+
+</tbody>
+
+</table>
+</div>
+
+
+
+
+
+<br>
+<br>
+
+<div style="color:White;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" id="recentData" align="center"
+			style="width: 100%; border: 1px solid black; border-collapse: collapse;">
+			<thead>
+				<tr style="color:white;background-color:black;font-weight: bold;">
+					
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+									<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+
+<tbody>
+
+			
+
+
+<!--<form action=""  method="post"> 
+{% csrf_token%}  
+{%for r in db%}                  
+ 
+
+
+
+
+
+<tr> 
+ <input  type="radio" id="r{{forloop.counter}}" name="Release" value="{{r.id}}">
+                                                 
+<label for="r{{forloop.counter}}">
+ <a href="/AdaptivePlanning/{{r.id}}/">{{r.Release}}</a>
+<td><input onChange='this.form.submit()' type="radio" id="r{{forloop.counter}}" name="Release" value="{{r.id}}">{{r.Release}}</td>
+
+
+
+</label><br>
+
+{%endfor%}
+
+
+</form>	-->
+
+
+
+
+{%for r in db1%}
+<form action=""  method="post"> 
+<tr style="color:white;background-color:black;font-weight: bold;">
+ <td style=><a href="/AdaptivePlanning/{{r.id}}/"><input onclick="location.href='/AdaptivePlanning/{{r.id}}/'"  type="radio" ></a><Strong><a href="/AdaptivePlanning/{{r.id}}/">{{r.Release}}</a></Strong></td>
+
+<td style=>{{r.DD}}</td>
+ <td style=>{{r.DefectLeakage}}</td>
+<td style=>{{r.DefectRejection}}</td>
+ <td style=>{{r.TestCaseCount}}</td>
+<td style=>{{r.ApplicationComplexity}}</td>
+ <td style=>{{r.DomainKnowledge}}</td>
+<td style=>{{r.TechnicalSkills}}</td>
+ <td style=>{{r.ReqQueryCount}}</td>
+<td style=>{{r.CodeReviewComments}}</td>
+ <td style=>{{r.DesignReviewComments}}</td>
+<td style=>{{r.NoofResources}}</td>
+ <td style=>{{r.BudgetinUse}}</td>
+<td style=>{{r.ETA}}</td>
+<td style=>{{r.CostofResource}}</td>
+ <td style=>{{r.Efficiency}}</td>
+<td style=>{{r.ProjectStatus}}</td>
+<td style=>{{r.AvailabilityofBudget}}</td>
+
+</tr>
+
+{%endfor%}
+    				
+
+			
+</form>
+</tbody>
+
+		
+</thead>
+	</tbody>
+		</table>
+	</div>
+
+	</div>
+	
+	
+
+	
+
+	</div>
+</div>
+</div>
+</table>
+
+
+
+</div>
+<br>
+
+<br>
+<form>
+
+<center>			
+
+  <br>
+ 
+
+		
+
+</center>
+</form>
+<br>
+<br>
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+	 <h2 style="color:white;font-weight:bold">Test Coverage</h2>
+	 <h3 style="color:white;font-weight:bold;font-size:20px">Requirement and Test coverage</h3><br>
+<div style="padding-left:80px">
+	<p><strong style="color:white;font-size:15pt;">This use case finds the coverage of the test cases.</strong></center></p>
+	<p><strong style="color:white;font-size:15pt;"></strong></p></div>
+
+
+
+<div style="padding-left:80px">	
+	<form method="post" enctype="multipart/form-data" action="/testcoverage/" >
+    {% csrf_token %}
+	<h4 style="color:white;font-weight:bold">Requirement</h4>
+	<textarea  rows="4" cols="50" name="content" id="content">
+
+						 
+		</textarea>
+	<h4 style="color:white;font-weight:bold">Test Case File</h4>
+    <input type="file" name="myfile" style="align:left"><br>
+    <button type="submit" style="leftpadding:20px">Upload</button>
+  </form>
+  <br>
+ 
+<form action="/testcoverage/result/" method="post">{% csrf_token %}
+	{% if uploaded_file_url %}
+    <p><strong style="color:white;font-size:13pt;align:left;">File uploaded</strong> </p>
+  {% endif %}
+  <strong style="color:white;font-size:15pt;align:left">Algorithm :</strong></td>
+  <select style="color:black;font-size:16pt;align:left" name="algorithm">
+	  			<option value="1">Latent Symantic Analysis</option>
+				
+
+				
+			</select>
+			<br>
+			<br>
+  <center> <input type="submit" class="btn btn-theme" value="Test Coverage" /></center>
+	<br>
+	
+</form>
+</div>
+	
+{% endblock %}

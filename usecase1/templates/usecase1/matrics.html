@@ -1,0 +1,68 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+
+	 <form action="/usecase1/details/" method="post">{% csrf_token %}
+	 
+	 <h2 style="color:white;font-weight:bold">Aspire Prediction</h2>
+	 <table>
+	 <tr>
+	 	<td style="border: 0px;border-collapse: collapse;" name ="Project"><strong style="color:white;font-size:15pt">Project:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;"> 
+	 		<select  name="project" style="color:black;font-size:16pt">
+	  			
+				<option value="Aspire">Aspire</option>
+			</select>
+	 	</td>
+	 </tr>
+
+
+	
+
+<tr>
+	 	<td style="border: 0px;border-collapse: collapse;" ><strong style="color:white;font-size:15pt">Prediction:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;"  >
+	 		<select style="color:black;font-size:16pt" name="Module">
+	  			<option value="Defect Density">Defect Density</option>
+				<option value="Defect Acceptance Rate">Defect Acceptance Rate</option>
+				<option value="Defect Defferal Rate">Defect Defferal Rate</option>
+				<option value="All Defect">All Defect</option>
+				<option value="Functional Defects">Functional Defects</option>
+				<option value="Defect Leakage<">Defect Leakage</option>
+				<option value="Defect Modules">Defect Modules</option>
+			</select>
+	 	</td>
+	 </tr>
+	
+
+
+	 <tr>
+	 	<td style="border: 0px;border-collapse: collapse;"><strong style="color:white;font-size:15pt">Trend:</strong></td>
+	 	<td style="border: 0px;border-collapse: collapse;">
+			<select style="color:black;font-size:16pt" name="Trend">
+				<option value="Release Wise">Release Wise</option>	
+				<option value="Module">Module</option>
+				<option value="Sprint">Sprint</option>
+				<option value="Submodule">Submodule</option>
+				<option value="Page">Page</option>
+				<option value="Project wise">Project wise</option>
+				<option value="Customer wise">Customer wise</option>
+				<option value="Over the period of Time">Over the period of Time</option>
+				<option value="Month">Month</option>
+				<option value="Quarter">Quarter</option>
+				<option value="Year">Year</option>
+			</select>
+		</td>
+	 </tr>
+
+	 </table>
+
+
+	
+
+    <input type="submit" class="btn btn-theme" value="Metrics" />
+</form>
+
+	</center>
+{% endblock %}

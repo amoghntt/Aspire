@@ -1,0 +1,11 @@
+rel_id,defect_density,defect_rejection,defect_leakage,test_case_count,application_complexity,domain_knowledge,technical_skills,requirement_query_count,code_review_comments,design_review_comments,No_of_Resources,Budget_in_Use,Number_of_days_Completion,Cost_of_resource,Efficiency,Project_Status,Availability_Of_Budget
+1032,8,3,1,38,1,1,2,24,24,28,5,3200,3,1200,4,2,6100
+1033,2,0,0,40,2,2,1,22,31,30,5,3000,6,1100,3,2,6050
+1034,5,1,0,26,2,2,5,35,21,25,4,6000,2,2000,4,2,10500
+1035,10,3,1,20,4,1,2,39,24,21,5,2000,5,1000,5,3,3000
+1036,3,0,0,36,3,3,4,28,28,31,6,4000,6,1500,2,1,8100
+1037,6,1,1,41,1,2,3,21,28,30,4,4000,3,1800,2,1,8150
+1038,8,4,1,38,1,1,2,24,24,28,5,1000,1,500,1,1,2100
+1039,4,1,0,19,5,4,1,50,17,19,4,3000,3,1000,2,1,6150
+1040,15,7,2,59,6,1,2,36,16,17,5,2500,2,1000,4,2,4500
+1041,6,2,0,19,3,3,2,34,24,26,4,3000,3,1000,2,1,6150

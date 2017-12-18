@@ -1,0 +1,50 @@
+{% extends "AdaptivePlanning/home.html" %}
+
+{% block content %}
+<center>
+
+<div style="background-color: white; width: 40%" >
+<table class = "table table-bordered" id="tableResult">
+<thead>
+<tr>
+<th class="tableHead">Parameter</th>
+
+<th class="tableHead">Value</th></tr>
+</thead>
+<tbody>
+{% for r in P.adaptive_set.all %}
+<tr><td class="tableCells">Release ID&nbsp;:</td>
+
+
+<td class="tableCells">{{releaseId}}</td>
+
+</tr>
+
+<tr>
+<td class="tableCells">Project Status&nbsp;:</td>
+
+<td class="tableCells">{{projectStatus}}</td>
+</tr>
+
+
+<tr>
+<td class="tableCells">Adaptive Budget&nbsp;:</td>
+<td class="tableCells">{{ a1 }}</td>
+</tr>
+
+<tr>
+<td class="tableCells">Available Budget&nbsp;:</td>
+<td class="tableCells">{{ a2 }}</td>
+</tr>
+
+
+</tbody>
+
+
+</table>
+    </div>
+</center>
+
+</table>
+{%endfor%}
+{% endblock%}

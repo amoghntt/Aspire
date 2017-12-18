@@ -1,0 +1,39 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+	 <center>
+	 <h2 style="color:white;font-weight:bold">Mapping UsecCase Code To Scripts</h2>
+	 <h3 style="color:white;font-weight:bold;font-size:20px">Source Code Mapping</h3><br></center>
+	 <div style="padding-left:80px">
+	 <p><strong style="color:white;font-size:15pt;">This use case maps source code to scripts.</strong></p>
+	 <p><strong style="color:white;font-size:15pt;"> It uses object mapping model from Mapping Use Case Scripts To Object and maps source code to test scripts. </strong></p>
+	 <p><strong style="color:white;font-size:15pt;">Thus we can run specific test scripts based on files changed in the source code.</strong></p></div>
+	 <!--<table>
+	 	<tr>
+	 		<td style="border: 0px;border-collapse: collapse;">
+				<strong style="color:white;">Java_Files:</strong>
+			</td>
+			<td style="border: 0px;border-collapse: collapse;">
+				<input type="file" class="filestyle"  webkitdirectory directory multiple/>
+			</td>
+		</tr>
+		<tr>
+			<td style="border: 0px;border-collapse: collapse;">
+				<strong style="color:white;">Training_Data:</strong>
+			</td>
+			<td style="border: 0px;border-collapse: collapse;">
+				<input type="file" class="filestyle" webkitdirectory directory multiple/>
+			</td>
+		</tr>
+	</table>-->
+	<br>
+	<center>
+<form action="result/">
+    <input type="submit" class="btn btn-theme" value="TEST" />
+	<br>
+	<br>
+	
+</form>
+
+	</center>
+{% endblock %}

@@ -1,0 +1,2 @@
+verify tl user predict using cresta per prediction defect deferral rate trend release selected usrlocalbinperl count  stdin w split count i iw si wi i iw print sicount print n
+verify pm user able navigate metrics page selecting project usrlocalbinperl openc argv die cant open candidate doc id list fileargvn c dict closec stdin docss docid  elsif doc defined dictdocid print doc docidn print doctextn print docn doctext docid else doctext

@@ -1,0 +1,148 @@
+{% extends "AdaptivePlanning/home.html" %}
+
+{% block content %}
+ <center>
+	<h1 style="color:white;"><b> Adaptive Planning </b></h1>
+        
+	<div style="color:black;width: 100%; height: 200px;overflow-y: scroll;"
+		align="center">
+		<table class="example" align="center"
+			style="color:White;width: 100%; border-collapse: collapse;border-style: solid;border-color:black;">
+
+			<thead>
+				<tr style="color:white;background-color:black;font-weight: bold;">
+					<th class="paddingCell">Release</th>
+					<th class="paddingCell">Defect Density</th>
+					<th class="paddingCell">Defect Leakage</th>
+					<th class="paddingCell">Defect Rejection</th>
+				
+					<th class="paddingCell">Test Case Count</th>
+					<th class="paddingCell">Application Complexity</th>
+					<th class="paddingCell">Domain Knowledge</th>
+					<th class="paddingCell">Technical Skills</th>
+					<th class="paddingCell">Req. Query Count</th>
+					<th class="paddingCell">Code Review Comments</th>
+					<th class="paddingCell">Design Review Comments</th>
+					<th class="paddingCell">No. of Resources</th>
+					<th class="paddingCell">Budget in Use</th>
+					<th class="paddingCell">ETA (Days)</th>
+					<th class="paddingCell">Cost of Resource</th>
+					<th class="paddingCell">Efficiency</th>
+					<th class="paddingCell">Project Status</th>
+					<th class="paddingCell">Availability of Budget</th>
+				</tr>
+			</thead>
+</center>
+</thead>
+	</tbody>
+	<tbody>
+
+				{%for r in db2%}
+                               
+  <tr style="color:white;background-color:black;font-weight: bold;">                                                    
+ <td style=>{{r.Release}}</td>
+<td style=>{{r.DD}}</td>
+ <td style=>{{r.DefectLeakage}}</td>
+<td style=>{{r.DefectRejection}}</td>
+ <td style=>{{r.TestCaseCount}}</td>
+<td style=>{{r.ApplicationComplexity}}</td>
+ <td style=>{{r.DomainKnowledge}}</td>
+<td style=>{{r.TechnicalSkills}}</td>
+ <td style=>{{r.ReqQueryCount}}</td>
+<td style=>{{r.CodeReviewComments}}</td>
+ <td style=>{{r.DesignReviewComments}}</td>
+<td style=>{{r.NoofResources}}</td>
+ <td style=>{{r.BudgetinUse}}</td>
+<td style=>{{r.ETA}}</td>
+ <td style=>{{r.CostofResource}}</td>
+ <td style=>{{r.Efficiency}}</td>
+<td style=>{{r.ProjectStatus}}</td>
+<td style=>{{r.AvailabilityofBudget}}</td>
+
+{%endfor%}
+</tr>
+    				
+			
+
+</tbody>
+
+</table>
+</div>
+
+
+
+
+
+<br>
+<br>
+
+
+<h3 style="color:white;"><b> Release:{{P.Release}} </b></h3>
+	
+<br>
+
+<br>
+
+{% for r in P.adaptive1_set.all %}
+	<form action="/AdaptivePlanning/{{r.id}}/predict/" method="post">
+{% csrf_token%} 
+<tr style="color:white;background-color:black;font-weight: bold;">
+   <td style="width: 50px;"></td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="releaseId"
+						id="releaseId"  value="{{r.Release}}"/>  &nbsp &nbsp    </td>
+
+				<td><input type="number" style="width: 45px; text-align: center" name="defectDensity"
+						id="defectDensity" value="{{r.DD}}" />&nbsp &nbsp </td>
+					<td><input type="number" 
+						style="width: 55px; text-align: center" name="defectLeakage"
+						id="defectLeakage" value="{{r.DefectLeakage}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="defectRejection"
+						id="defectRejection" value="{{r.DefectRejection}}" /> &nbsp &nbsp </td>
+					
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="testCaseCount"
+						id="testCaseCount"  value="{{r.TestCaseCount}}"/> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center"
+						name="applicationComplexity" id="applicationComplexity"  value="{{r.ApplicationComplexity}}"/> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="domainKnowledge"
+						id="domainKnowledge" value="{{r.DomainKnowledge}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="technicalSkills"
+						id="technicalSkills" value="{{r.TechnicalSkills}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center"
+						name="requirementQueryCount" id="requirementQueryCount"  value="{{r.ReqQueryCount}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="codeReviewComments"
+						id="codeReviewComments" value="{{r.CodeReviewComments}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center"
+						name="designReviewComments"  value="{{r.DesignReviewComments}}"/> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="numberOfResources"
+						id="numberOfResources" value="{{r.NoofResources}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="budgetInUse" value="{{r.BudgetinUse}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center"
+						name="numberOfDaysToComplete" value="{{r.ETA}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="costOfResource"  value="{{r.CostofResource}}"/> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="efficiency" value="{{r.Efficiency}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center" name="projectStatus" value="{{r.ProjectStatus}}" /> &nbsp &nbsp </td>
+					<td><input type="number" min="0" step="1"
+						style="width: 55px; text-align: center"
+						name="availabilityOfBudget" value="{{r.AvailabilityofBudget}}" /> &nbsp &nbsp </td>
+				</tr>
+<br>
+<br>
+<button type="submit">Predict</button>
+{%endfor%}
+
+{% endblock %}

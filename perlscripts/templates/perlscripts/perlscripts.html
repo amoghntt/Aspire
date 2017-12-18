@@ -1,0 +1,20 @@
+{% extends "juniper/header.html" %}
+
+{% block content %}
+
+	 <center>
+	 <h2 style="color:white;font-weight:bold">Mapping Use Case Scripts To Objects</h2>
+	 <h3 style="color:white;font-weight:bold;font-size:20px">Test Scripts Mapping</h3></center><br>
+	<div style="padding-left:80px"> <p><strong style="color:white;font-size:15pt;">This use case maps test scripts with functional object.</strong</p><br><p><strong style="color:white;font-size:15pt;"> A model is created using standard perl scripts(traning data).</strong></p><p><strong style="color:white;font-size:15pt;"> This model is then used to map other perl test scripts with functional objects.</strong></p></div>
+	 <form action="result/" method="POST">
+	
+	<br>
+	<center>
+<form action="result/"> {% csrf_token %}
+    <input type="submit" class="btn btn-theme" value="TEST" /> 
+	<br>
+	<br>
+</form>
+
+	</center>
+{% endblock %}

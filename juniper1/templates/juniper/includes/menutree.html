@@ -1,0 +1,117 @@
+{% block content %}
+ <div id="treePane" style="background-color:white">
+	<ul>
+		<!--<li><label class="node open">Introduction to Juniper</label>
+			<ul>
+				<li><a href="/juniper/uc1" style="color:black;">Base Home Screen</a></li>
+				<li><a href="/juniper/Access_and_Security_Recommendations" style="color:black;">Access and Security Recommendations</a></li>
+			</ul>
+		</li>
+		<li><label class="node">Use case 1A and Use case 1B</label>
+			<ul>
+				<li>Informtion</li>
+				<li><label class="node">Use case 1A in Detail</label>
+					<ul>
+						<li><a href="/juniper/uc1a" style="color:black;">Information</a></li>
+					</ul>
+				</li>
+				<li><label class="node">Use case 1B in Detail</label>
+					<ul>
+						<li><a href="/juniper/uc1b" style="color:black;">Information</a></li>						
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li><label class="node">Use case 2</label>
+			<ul>
+				<li><a href="/juniper/uc2" style="color:black;">Information</a></li>
+			</ul>
+		</li>
+		<li><label class="node">Use case 3</label>
+			<ul>
+				<li><a href="/juniper/uc3" style="color:black;">Information</a></li>
+			</ul>
+		</li>
+		<li><label class="node">Use case 4</label>
+			<ul>
+				<li><a href="/juniper/uc4" style="color:black;">Information</a></li>
+			</ul>
+		</li>
+		-->
+		<li><label class="node"><a href="/juniper/aspire_tool_kit" style="color:black;">Aspire Tool Kit</a></label>
+			<ul>
+				<li><a href="#quality_prediction" style="color:black;">Quality Prediction</a></li>
+				<li><a href="#test_optimization" style="color:black;">Test Optimization</a></li>
+				<li><a href="#test_coverage" style="color:black;">Test Coverage</a></li>
+                            <li><a href="#test_coverage" style="color:black;">Adaptive Planning</a></li>
+			</ul>
+		</li>
+		<li><label class="node"><a href="/juniper/intoduction_to_juniper_usecases" style="color:black;">Introduction to Juniper Usecases</a></label>
+			<ul>
+				<li><a href="#basic_home_screen" style="color:black;">Basic Home Screen</a></li>
+				<li><a href="#usecase1a" style="color:black;">Use case 1A</a></li>
+				<li><a href="#usecase1b" style="color:black;">Use case 1B</a></li>
+				<li><a href="#usecase2" style="color:black;">Use case 2</a></li>
+				<li><a href="#usecase3" style="color:black;">Use case 3</a></li>
+				<li><a href="#usecase4" style="color:black;">Use case 4</a></li>
+			</ul>
+		</li>
+		<li><label class="node"><a href="/juniper/installation_guide" style="color:black;">Installation Guide</a></label>
+			<ul>
+				<li><a href="#introduction" style="color:black;">1. Introduction</a></li>
+				<li><a href="#purpose" style="color:black;">2. Purpose</a></li>
+				<li><a href="#scope" style="color:black;">3. Scope</a></li>
+				<li><a href="#goals" style="color:black;">4. Goals</a></li>
+				<li><label class="node"><a href="#system_requirements" style="color:black;">5. System Requirements</a></label>
+					<ul>
+						<li><a href="#hardware_requirements" style="color:black;">Hardware Requirements</a></li>
+						<li><a href="#software_requirements" style="color:black;">Software Requirements</a></li>
+					</ul>
+				</li>
+				<li><a href="#user_account_controls" style="color:black;">6. User Account Controls</a></li>
+				<li><a href="#install_python_libraries" style="color:black;">7. Install Python Libraries</a></li>
+				<li><label class="node"><a href="#running_the_aspire" style="color:black;">8. Running the Aspire </a></label>
+					<ul>
+						<li><a href="#login_to_aspire" style="color:black;">Login to ASPIRE</a></li>
+						<li><a href="#run_usecase1" style="color:black;">Run Usecase1</a></li>
+						<li><a href="#run_usecase2" style="color:black;">Run Usecase2</a></li>
+						<li><a href="#run_usecase3" style="color:black;">Run Usecase3</a></li>
+						<li><a href="#run_usecase4" style="color:black;">Run Usecase4</a></li>
+					</ul>		
+				</li>
+				<li><a href="#referances" style="color:black;">9. References</a></li>
+				<li><a href="#additional_information" style="color:black;">10.  Additional Information:</a></li>
+			</ul>
+		</li>
+		<li><label class="node"><a href="/juniper/aspire_user_manual" style="color:black;">Aspire User Manual</a></label>
+			<ul>
+				<li><a href="#introduction" style="color:black;">Introduction</a></li>
+				<li><a href="#purpose" style="color:black;">Purpose</a></li>
+				<li><a href="#goals" style="color:black;">Goals</a></li>
+				<li><a href="#aspire_technical_overview" style="color:black;">Aspire Technical Overview</a></li>
+				<li><a href="#system_summary" style="color:black;">System Summary</a></li>
+				<li><label class="node"><a href="#getting_started" style="color:black;">Getting Started</a></label>
+					<ul>
+						<li><a href="#tool_bar_features" style="color:black;">Tool bar features</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+ </div>
+ <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+ <script type="text/javascript">
+ 
+ (function() {
+  var treePaneNodes = $('#treePane').find(".node");
+  treePaneNodes.next("ul").hide();
+  $('#treePane').find(".open").next("ul").show();;
+  treePaneNodes.on('click', function() {
+   $(this).next("ul").first().toggle();
+   $(this).toggleClass("open");
+  })
+ })();
+ </script>
+
+
+{% endblock %} 
